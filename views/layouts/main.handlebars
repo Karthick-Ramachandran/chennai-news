@@ -43,29 +43,6 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
     crossorigin="anonymous"></script>
-    <script>
-   let deferredPrompt;
-
-  window.addEventListener('beforeinstallprompt', function(event) {
-      e.preventDefault();
-      deferredPrompt = e;
-    });
-  var btnAdd = document.querySelector(".ad2hs-prompt");
-
-    btnAdd.addEventListener('click', (e) => {
-      btnAdd.style.display = 'none';
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice
-        .then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
-          } else {
-            console.log('User dismissed the A2HS prompt');
-          }
-          deferredPrompt = null;
-        });
-    });
-    </script>
 </body>
 
 </html>
